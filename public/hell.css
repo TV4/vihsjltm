@@ -16,7 +16,8 @@
 	text-align: center;
 	text-transform: uppercase;
 }
-.headline:active {text-decoration: none;}
+.headline:link {color: #999999; text-decoration: none; font-weight: 800;}
+.headline:active {color: #999999; text-decoration: none;}
 .headline:hover {color: #999999;}
 .headline:visited {color: #999999; text-decoration: none;}
 
@@ -29,9 +30,10 @@
 	text-align: center;
 	text-transform: uppercase;
 }
-.underline:active {text-decoration: none;}
-.underline:hover {color: #999999;}
-.underline:visited {color: #999999; text-decoration: none;}
+.underline:link {color: #000000; font-weight: 800;}
+.underline:active {color: #000000; text-decoration: none;}
+.underline:hover {color: #000000;}
+.underline:visited {color: #000000; text-decoration: none;}
 
 .body {
 	margin-left: 25%;
