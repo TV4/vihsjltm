@@ -16,11 +16,17 @@
 	text-align: center;
 	text-transform: uppercase;
 }
+
+.headline a {color: #999; text-decoration:none;}
+.headline a:hover{color: #999; text-decoration:underline;}
+/*.headline a:active{color: #999; text-decoration:none;}
+.headline a:visited{color: #999; text-decoration:none;}
+
 .headline:link {color: #999999; text-decoration: none; font-weight: 800;}
 .headline:active {color: #999999; text-decoration: none;}
 .headline:hover {color: #999999;}
 .headline:visited {color: #999999; text-decoration: none;}
-
+*/
 .underline {
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 	font-size: 20px;
@@ -30,11 +36,16 @@
 	text-align: center;
 	text-transform: uppercase;
 }
+.underline a {color: #000; text-decoration:none;}
+.underline a:hover{color: #000; text-decoration:underline;}
+/*.underline a:active{color: #000; text-decoration:none;}
+.underline a:visited{color: #000; text-decoration:none;}
+
 .underline:link {color: #000000; font-weight: 800;}
-.underline:active {color: #000000; text-decoration: none;}
+.underline:active {color: #000000;text-decoration: none;}
 .underline:hover {color: #000000;}
 .underline:visited {color: #000000; text-decoration: none;}
-
+*/
 .body {
 	margin-left: 25%;
 	margin-top: 50px;
