@@ -1,32 +1,27 @@
 require 'sinatra'
-require 'curb'
-require 'nokogiri'
 require 'erb'
+require 'yaml'
 
-SEARCH_URL = "http://www.recept.nu/1.118748?search=true&page=0&view=xml&rcp_recipeCategory=" + URI.encode("Varmrätter")
+INGREDIENTS = YAML::load(open('data.yml'))
 
-INGREDIENTS = ["Kött", "Köttfärs", "Korv &amp; chark", "Vilt", "Kyckling &amp; fågel", "Fisk &amp; skaldjur", "Alkohol", "Pasta &amp; nudlar", "Ris, couscous &amp; andra gryn", "Grönsaker, potatis &amp; andra rotfrukter", "Ärtor¸ bönor &amp; linser", "Frukt &amp; bär", "Ägg &amp; mejeri", "Mjöl"] 
-
-VEGAN = ["Alkohol", "Pasta &amp; nudlar", "Ris, couscous &amp; andra gryn", "Grönsaker, potatis &amp; andra rotfrukter", "Ärtor¸ bönor &amp; linser", "Frukt &amp; bär", "Ägg &amp; mejeri", "Mjöl"] 
+VEGAN = YAML::load(open('data2.yml'))
 
 get '/' do
   @i_dont_play_that ="JAG ÄTER FÖR I HELVETE INTE KÖTT"
   @i_dont_play_that_link="/vegan"
-  @recipe_title, @recipe_link = find_dinner("&rcp_mainIngredientCategory=" + URI.encode(INGREDIENTS.sort!{rand}[0]))
+  @recipe_title, @recipe_link = find_dinner INGREDIENTS
   erb :index
 end
 
 get '/vegan' do
   @i_dont_play_that="JAG ÄR VÄL FÖR I HELVETE INGEN GRÄSÄTARE"
   @i_dont_play_that_link="/"
-  @recipe_title, @recipe_link = find_dinner("&rcp_green=true&rcp_mainIngredientCategory=" + URI.encode(VEGAN.sort!{rand}[0]))
+  @recipe_title, @recipe_link = find_dinner VEGAN
   erb :index
 end
 
-def find_dinner(param)
-  rss = Curl::Easy.perform(SEARCH_URL + param).body_str
-  doc = Nokogiri::XML(rss)
-  title = doc.xpath('//title')[2].text
-  link = doc.xpath('//link')[2].text
+def find_dinner(arr)
+  title = arr.keys[rand(arr.keys.size)]
+  link = arr[title]
   return title, link
 end
