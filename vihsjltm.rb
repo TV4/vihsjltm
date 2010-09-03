@@ -2,9 +2,9 @@ require 'sinatra'
 require 'erb'
 require 'yaml'
 
-INGREDIENTS = YAML::load(open('data.yml'))
+INGREDIENTS = YAML::load(open('with-meat.yml'))
 
-VEGAN = YAML::load(open('data2.yml'))
+VEGAN = YAML::load(open('without-meat.yml'))
 
 get '/' do
   @i_dont_play_that ="JAG ÄTER FÖR I HELVETE INTE KÖTT"
