@@ -1,4 +1,4 @@
-Enkel site för att hitta vad man ska lagga till middag.
+Enkel site för att hitta vad man ska laga till middag.
 ===
 code for http://www.vadihelveteskajaglagatillmiddag.nu/
 
