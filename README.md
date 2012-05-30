@@ -5,6 +5,5 @@ code for http://www.vadihelveteskajaglagatillmiddag.nu/
 * installera sinatra "sudo gem install sinatra"
 * run med ruby vihsjltm.rb
 
-Lägga till flera kötträtter i with-meat.yml och 
-de vegetarisk i without-meat.yml.
-
+Lägg till fler kötträtter i with-meat.yml och 
+vegetariska i without-meat.yml.
